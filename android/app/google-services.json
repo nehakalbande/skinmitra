@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484942188115",
+    "project_id": "skinmitra-e2dad",
+    "storage_bucket": "skinmitra-e2dad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484942188115:android:74a178d59e7f9c679880a6",
+        "android_client_info": {
+          "package_name": "mk.skinmitra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484942188115-a7umhj1pteqic35ji2l7tgke4amd1vv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0T0j4olS6vITblOhtItHwF-HzFDp6nQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484942188115-a7umhj1pteqic35ji2l7tgke4amd1vv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
