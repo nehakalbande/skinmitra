@@ -3,9 +3,6 @@ import 'package:skinmitra/pages/image_preview.dart';
 
 import '../widgets/photo_button.dart';
 import 'package:flutter/material.dart';
-
-// import './../screens/image_search.dart';
-
 import 'package:camera/camera.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
