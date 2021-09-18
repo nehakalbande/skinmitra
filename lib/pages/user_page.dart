@@ -52,11 +52,11 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.green,
         title: Text("Welcome ${_user.displayName}"),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: Padding(
@@ -93,11 +93,11 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                       ),
                     ),
               SizedBox(height: 16.0),
-              SizedBox(height: 8.0),
+
               Text(
                 _user.displayName!,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 26,
                 ),
               ),
@@ -110,55 +110,51 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   letterSpacing: 0.5,
                 ),
               ),
-              SizedBox(height: 24.0),
+              SizedBox(height: 20.0),
               Text(
                 'You are now signed in using your Google account. To sign out of your account, click the "Sign Out" button below.',
                 style: TextStyle(
                     color: Colors.grey, fontSize: 14, letterSpacing: 0.2),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 20),
+
               LoginButton(
-                  title: "Scan Crop", onTap: () => Get.to(() => CameraPage())),
-              SizedBox(height: 16.0),
+                title: "Scan Skin",
+                onTap: () => Get.to(() => CameraPage()),
+                shade: Colors.orangeAccent,
+                factor: 0.7,
+              ),
+
+              SizedBox(height: 15.0),
+
+              LoginButton(
+                title: "Know Your Well-Being",
+                onTap: () => Get.to(() => {}),
+                shade: Colors.orangeAccent,
+                factor: 0.7,
+              ),
+
+              SizedBox(height: 15.0),
+
               _isSigningOut
-                  ? CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                    )
-                  : ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          Colors.redAccent,
-                        ),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(26),
-                          ),
-                        ),
-                      ),
-                      onPressed: () async {
-                        setState(() {
-                          _isSigningOut = true;
-                        });
-                        await Authentication.signOut(context: context);
-                        setState(() {
-                          _isSigningOut = false;
-                        });
-                        Navigator.of(context)
-                            .pushReplacement(_routeToSignInScreen());
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
-                        child: Text(
-                          'Sign Out',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            letterSpacing: 2,
-                          ),
-                        ),
-                      ),
-                    ),
+                  ? CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white),)
+                  : LoginButton(
+                  title: "Sign Out",
+                  onTap: () async {
+                    setState(() {
+                      _isSigningOut = true;
+                    });
+                    await Authentication.signOut(context: context);
+                    setState(() {
+                      _isSigningOut = false;
+                    });
+                    Navigator.of(context)
+                        .pushReplacement(_routeToSignInScreen());
+                  },
+                  shade: Colors.redAccent,
+                  factor: 0.5,
+              ),
+
             ],
           ),
         ),

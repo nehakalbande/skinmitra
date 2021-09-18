@@ -23,6 +23,7 @@ class _ImagePreviewState extends State<ImagePreview> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Preview your image"),
+        centerTitle: true,
         backgroundColor: Colors.green,
       ),
       body: Row(
@@ -37,12 +38,14 @@ class _ImagePreviewState extends State<ImagePreview> {
                   flex: 2,
                 ),
                 Image.file(File(widget.imagePath),
-                    height: 300, fit: BoxFit.cover),
+                    height: MediaQuery.of(context).size.height*0.6, fit: BoxFit.cover),
                 Spacer(
                   flex: 1,
                 ),
                 LoginButton(
                   title: "Send",
+                  shade: Colors.orangeAccent,
+                  factor: 0.5,
                   onTap: () async {
                     setState(() {
                       isLoading = true;
@@ -61,6 +64,7 @@ class _ImagePreviewState extends State<ImagePreview> {
                           remedy: remedy,
                         ));
                   },
+
                 ),
                 isLoading
                     ? Expanded(

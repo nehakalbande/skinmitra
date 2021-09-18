@@ -78,6 +78,8 @@ class _ResultPageState extends State<ResultPage> {
             ),
             LoginButton(
                 title: "Send Alert",
+                shade: Colors.orangeAccent,
+                factor: 0.7,
                 onTap: () async {
                   await sendAlerts(
                       plant: widget.plant, disease: widget.disease);
@@ -93,6 +95,8 @@ class _ResultPageState extends State<ResultPage> {
             ),
             LoginButton(
                 title: "Make Report",
+                shade: Colors.orangeAccent,
+                factor: 0.7,
                 onTap: () async {
                   setState(() {
                     isLoading = true;

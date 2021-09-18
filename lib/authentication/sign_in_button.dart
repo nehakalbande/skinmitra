@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:skinmitra/pages/home_page.dart';
 import 'package:skinmitra/pages/user_page.dart';
 import 'package:skinmitra/widgets/login_button.dart';
 
@@ -39,7 +40,10 @@ class _SignInButtonState extends State<SignInButton> {
                   if (user != null) {
                     Get.off(() => UserInfoScreen(user: user));
                   }
-                });
+                },
+              shade: Colors.orangeAccent,
+              factor: 0.8,
+            );
           }
           return CircularProgressIndicator();
         },

@@ -4,6 +4,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:skinmitra/authentication/sign_in_button.dart';
+import 'package:skinmitra/pages/home_page.dart';
 import 'package:skinmitra/pages/user_page.dart';
 import 'package:skinmitra/services/notifications.dart';
 
@@ -19,7 +20,7 @@ void main() async {
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    home: FirebaseAuth.instance.currentUser != null ?UserInfoScreen(user: FirebaseAuth.instance.currentUser!) :  Welcome()
+    home: FirebaseAuth.instance.currentUser != null ? homeScreen(user: FirebaseAuth.instance.currentUser!) :  Welcome()
   ));
 }
 
