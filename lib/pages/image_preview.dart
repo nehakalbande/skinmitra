@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:skinmitra/pages/result_page.dart';
 import 'package:skinmitra/services/http.dart';
 import 'package:skinmitra/widgets/login_button.dart';
+import 'package:skinmitra/widgets/nav_draw.dart';
 
 class ImagePreview extends StatefulWidget {
   final String imagePath;
@@ -21,6 +22,8 @@ class _ImagePreviewState extends State<ImagePreview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
+
       appBar: AppBar(
         title: Text("Preview your image"),
         centerTitle: true,

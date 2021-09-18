@@ -51,13 +51,13 @@ class _homeScreenState extends State<homeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
 
       drawer: NavigationDrawerWidget(),
 
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.green,
         title: Text("Welcome ${_user.displayName}"),
       ),
 

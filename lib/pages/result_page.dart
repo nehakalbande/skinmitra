@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:skinmitra/pdf/pdf_gen.dart';
 import 'package:skinmitra/services/http.dart';
 import 'package:skinmitra/widgets/login_button.dart';
+import 'package:skinmitra/widgets/nav_draw.dart';
 
 class ResultPage extends StatefulWidget {
   final String disease, plant, remedy;
@@ -23,8 +24,11 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
+
       appBar: AppBar(
-          title: Text("Your Crop Analysis Report"),
+          title: Text("Your Skin Analysis Report"),
+          centerTitle: true,
           backgroundColor: Colors.green),
       body: Center(
         child: Column(
@@ -34,8 +38,8 @@ class _ResultPageState extends State<ResultPage> {
               flex: 1,
             ),
             Container(
-              height: 300,
-              width: 350,
+              height: MediaQuery.of(context).size.height*0.8,
+              width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                   color: Colors.greenAccent.withOpacity(0.3),
@@ -73,53 +77,9 @@ class _ResultPageState extends State<ResultPage> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 16,
-            ),
-            LoginButton(
-                title: "Send Alert",
-                shade: Colors.orangeAccent,
-                factor: 0.7,
-                onTap: () async {
-                  await sendAlerts(
-                      plant: widget.plant, disease: widget.disease);
-                  Get.snackbar(
-                    "Success!",
-                    "The Alert has been sent to everyone",
-                    backgroundColor: Colors.white,
-                    duration: Duration(seconds: 8),
-                  );
-                }),
-            SizedBox(
-              height: 10,
-            ),
-            LoginButton(
-                title: "Make Report",
-                shade: Colors.orangeAccent,
-                factor: 0.7,
-                onTap: () async {
-                  setState(() {
-                    isLoading = true;
-                  });
-                  bool result = await makeReport(
-                    plant: widget.plant,
-                    disease: widget.disease,
-                    remedy: widget.remedy,
-                  );
-                  setState(() {
-                    isLoading = false;
-                  });
-                  print(result);
 
-                  // if (result) {
-                  //   Get.snackbar(
-                  //     "Success!",
-                  //     "The Crop Analysis Report has been generated and saved to Downloads folder",
-                  //     backgroundColor: Colors.white,
-                  //     duration: Duration(seconds: 16),
-                  //   );
-                  // }
-                }),
+
+
             isLoading
                 ? Expanded(
                     flex: 1, child: Center(child: CircularProgressIndicator()))

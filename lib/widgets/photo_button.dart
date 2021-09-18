@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../styles.dart';
 
 class PhotoButton extends StatefulWidget {
   PhotoButton({required this.onTap});
@@ -53,7 +52,7 @@ class _PhotoButtonState extends State<PhotoButton> {
             shape: BoxShape.circle,
             color: Colors.transparent,
             border: Border.all(
-              color: kOrange,
+              color: Colors.deepOrange,
               width: 2.0,
             ),
           ),
@@ -64,7 +63,7 @@ class _PhotoButtonState extends State<PhotoButton> {
             curve: Curves.easeInOut,
             margin: EdgeInsets.all(margin),
             decoration: BoxDecoration(
-              color: kOrange.withOpacity(opacity),
+              color: Colors.deepOrange.withOpacity(opacity),
               shape: BoxShape.circle,
             ),
           ),
