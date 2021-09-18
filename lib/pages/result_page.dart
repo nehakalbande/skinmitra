@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:skinmitra/pdf/pdf_gen.dart';
-import 'package:skinmitra/services/http.dart';
-import 'package:skinmitra/widgets/login_button.dart';
 import 'package:skinmitra/widgets/nav_draw.dart';
 
 class ResultPage extends StatefulWidget {
