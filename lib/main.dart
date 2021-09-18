@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:skinmitra/authentication/sign_in_button.dart';
+import 'package:skinmitra/pages/user_page.dart';
 import 'package:skinmitra/services/notifications.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -13,15 +15,15 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(GetMaterialApp(
-    home: MyApp(),
+    debugShowCheckedModeBanner: false,
+    home: FirebaseAuth.instance.currentUser != null ?UserInfoScreen(user: FirebaseAuth.instance.currentUser!) :  Welcome()
   ));
 }
 
-class MyApp extends StatelessWidget {
+class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NotificationHandler(

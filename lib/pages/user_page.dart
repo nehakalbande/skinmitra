@@ -25,7 +25,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
 
   Route _routeToSignInScreen() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => MyApp(),
+      pageBuilder: (context, animation, secondaryAnimation) => Welcome(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         var begin = Offset(-1.0, 0.0);
         var end = Offset.zero;
