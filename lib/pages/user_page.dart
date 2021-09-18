@@ -52,7 +52,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.green,
         title: Text("Welcome ${_user.displayName}"),
@@ -97,7 +97,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 _user.displayName!,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 26,
                 ),
               ),
