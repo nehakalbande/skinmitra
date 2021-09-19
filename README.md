@@ -6,6 +6,14 @@ Skin Mitra ( Skin मित्र ) where ‘mitra’ in Sanskrit translates to 
 skincare application which will help physicians, radiologists and patients in preliminary
 assessments of skin related diseases along with providing a daily feed of skin care routines.
 
+## How Does The App Work:
+
+
+https://user-images.githubusercontent.com/65285162/133938682-bf3d9205-ca9c-49ce-8e14-334b1b82f5fc.mp4
+
+
+
+
 ## Technical Advantages
 
 - Skin Disease Detection using Machine Learning Model 
