@@ -18,8 +18,6 @@ tutorials that teach you skills you should know.
 A new tutorial presented to you daily
 
 
-
-
 ## Technologies used
 - Python
 - Pytorch
@@ -27,3 +25,20 @@ A new tutorial presented to you daily
 - Firebase
 - IBM Node-Red
 - Flask 
+
+
+## Impact
+
+- Will help those who don’t have access to the 
+resources and quality healthcare
+- Will Create Awareness for living a Better Lifestyle
+- Since the app also focuses on Ayurveda 
+(in the feed), it will have mass penetration in 
+the Indian market as well as those who are curious 
+to try out a new regime.
+
+## Challenges
+
+We ran into a lot of problems while trying to automate the process of generating an unseen tutorial every time the user asked for one. We experimented with many frameworks and settled on IBM Node-Red.  
+Each data structure had its own set of challenges in manipulating it.
+
