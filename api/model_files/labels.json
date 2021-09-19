@@ -1,0 +1,8 @@
+classes = {0:'Acne/Rosacea',
+           1:'Actinic Keratosis/Basal Cell Carcinoma/Malignant Lesions',
+           2:'Eczema',
+           3:'Melanoma Skin Cancer/Nevi/Moles',
+           4:'Psoriasis/Lichen Planus and related diseases', 
+           5:'Tinea Ringworm/Candidiasis/Fungal Infections',
+           6:'Urticaria/Hives', 
+           7:'Nail Fungus/Nail Disease'}
