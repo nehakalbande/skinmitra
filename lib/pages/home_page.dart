@@ -1,13 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'package:skinmitra/authentication/auth_class.dart';
-import 'package:skinmitra/camera/camera_page.dart';
-import 'package:skinmitra/widgets/login_button.dart';
+import 'package:skinmitra/widgets/Cared_info.dart';
 import 'package:skinmitra/widgets/nav_draw.dart';
 
-import '../main.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({Key? key, required User user}) : _user = user, super(key: key);
@@ -19,49 +15,70 @@ class homeScreen extends StatefulWidget {
 
 class _homeScreenState extends State<homeScreen> {
   late User _user;
-  bool _isSigningOut = false;
 
-  Route _routeToSignInScreen() {
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => Welcome(),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        var begin = Offset(-1.0, 0.0);
-        var end = Offset.zero;
-        var curve = Curves.ease;
+  late List mydata;
+  late int mydatalength = -1;
 
-        var tween =
-        Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+  var dio = Dio();
 
-        return SlideTransition(
-          position: animation.drive(tween),
-          child: child,
-        );
-      },
-    );
+  Future<String> loadJsonData() async {
+
+      print("sending req");
+      final response = await dio.get("https://skinmitra.mybluemix.net/data");
+      print("res");
+      print(response);
+      setState(() => mydata = response.data);
+
+      mydatalength = mydata.length;
+
+      print(mydatalength);
+
+    return 'success';
   }
+
 
   @override
   void initState() {
     _user = widget._user;
-
     super.initState();
+    this.loadJsonData();
   }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
 
       drawer: NavigationDrawerWidget(),
 
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.green,
         title: Text("Welcome ${_user.displayName}"),
       ),
 
-      
+      body: (mydatalength == -1)
+          ? Center(child: const CircularProgressIndicator())
+          : FutureBuilder(
+        builder: (context, snapshot) {
+          return ListView.builder(
+            itemBuilder: (ctx, index) {
+              return CardItem(
+                id: mydata[index]["id"].toString(),
+                title: mydata[index]["title"],
+                image1: mydata[index]["image1"],
+                image2: mydata[index]["image2"],
+                article: mydata[index]["article"],
+                youtube: mydata[index]["youtube"],
+                description: mydata[index]["description"],
+              );
+            },
+            itemCount: (mydatalength == null) ? 0 : mydata.length,
+          );
+        },
+      ),
+
     );
   }
 }

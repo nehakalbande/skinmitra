@@ -40,18 +40,4 @@ class LoginButton extends StatelessWidget {
     );
   }
 
-  //   return GestureDetector(
-  //     onTap: onTap,
-  //     child: Container(
-  //       width: MediaQuery.of(context).size.width*0.8,
-  //       padding: EdgeInsets.symmetric(vertical: 13),
-  //       alignment: Alignment.center,
-  //       child: Center(
-  //           child: Text(title,
-  //               style: TextStyle(fontSize: 20, color: Colors.white))),
-  //       decoration: BoxDecoration(
-  //           color: Colors.green, borderRadius: BorderRadius.circular(26)),
-  //     ),
-  //   );
-  // }
 }

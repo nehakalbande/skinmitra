@@ -7,6 +7,7 @@ import 'package:skinmitra/camera/camera_page.dart';
 import 'package:skinmitra/widgets/login_button.dart';
 
 import '../main.dart';
+import 'home_page.dart';
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({Key? key, required User user})
@@ -129,7 +130,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
 
               LoginButton(
                 title: "Know Your Well-Being",
-                onTap: () => Get.to(() => {}),
+                onTap: () => Get.to(() => homeScreen(user: _user,)),
                 shade: Colors.orangeAccent,
                 factor: 0.7,
               ),

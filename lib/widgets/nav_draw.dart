@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:skinmitra/authentication/auth_class.dart';
 import 'package:skinmitra/camera/camera_page.dart';
+import 'package:skinmitra/pages/home_page.dart';
 
 import '../main.dart';
 
@@ -64,10 +65,10 @@ class NavigationDrawerWidget extends StatelessWidget {
             buildMenuItem(
                 text: "Know Your Well-Being",
                 icon: Icons.nightlife,
-                onClicked: () => {}
-              // onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-              //   builder: (context) => CameraPage(),
-              // )),
+
+                onClicked: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => homeScreen(user: User!,),
+                )),
             ),
 
             SizedBox(height: MediaQuery

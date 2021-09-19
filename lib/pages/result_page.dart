@@ -17,9 +17,12 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
   var isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+
       drawer: NavigationDrawerWidget(),
 
       appBar: AppBar(
@@ -29,50 +32,77 @@ class _ResultPageState extends State<ResultPage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Spacer(
-              flex: 1,
+            SizedBox(
+              height: MediaQuery.of(context).size.width*0.25,
             ),
-            Container(
-              height: MediaQuery.of(context).size.height*0.8,
-              width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  color: Colors.greenAccent.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(16)),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              elevation: 4,
+
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Spacer(
-                    flex: 2,
+                children: <Widget>[
+                  Text(
+                    "",
+                    style: TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
                   ),
-                  Text("Plant Name: " + widget.plant,
-                      style: TextStyle(fontSize: 18)),
-                  Spacer(
-                    flex: 1,
+                  Text(
+                    widget.remedy,
+                    style: TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
                   ),
-                  widget.disease == "healthy"
-                      ? Text("Your Plant is Healthy!!",
-                          style: TextStyle(fontSize: 18))
-                      : Text("Disease detected: " + widget.disease,
-                          style: TextStyle(fontSize: 18)),
-                  Spacer(flex: 1),
-                  widget.disease == "healthy"
-                      ? Container()
-                      : Text("Possible remedy: ",
-                          style: TextStyle(fontSize: 18)),
-                  SizedBox(height: 2),
-                  widget.disease == "healthy"
-                      ? Container()
-                      : Text(widget.remedy,
-                          style: TextStyle(
-                              fontSize: 14, fontStyle: FontStyle.italic)),
-                  Spacer(
-                    flex: 2,
+                  Text(
+                    "",
+                    style: TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
+
+
+            // Container(
+            //   height: MediaQuery.of(context).size.height*0.8,
+            //   width: MediaQuery.of(context).size.width,
+            //   padding: const EdgeInsets.all(8),
+            //   decoration: BoxDecoration(
+            //       color: Colors.greenAccent.withOpacity(0.3),
+            //       borderRadius: BorderRadius.circular(16)),
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //
+            //       Text("Plant Name: " + widget.plant,
+            //           style: TextStyle(fontSize: 18)),
+            //
+            //       widget.disease == "healthy"
+            //           ? Text("Your Plant is Healthy!!",
+            //               style: TextStyle(fontSize: 18))
+            //           : Text("Disease detected: " + widget.disease,
+            //               style: TextStyle(fontSize: 18)),
+            //
+            //
+            //       widget.disease == "healthy"
+            //           ? Container()
+            //           : Text("Possible remedy: ",
+            //               style: TextStyle(fontSize: 18)),
+            //
+            //
+            //       widget.disease == "healthy"
+            //           ? Container()
+            //           : Text(widget.remedy,
+            //               style: TextStyle(
+            //                   fontSize: 14, fontStyle: FontStyle.italic)),
+            //       Spacer(
+            //         flex: 2,
+            //       ),
+            //     ],
+            //   ),
+            // ),
 
 
 

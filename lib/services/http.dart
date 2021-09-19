@@ -17,3 +17,4 @@ Future<dynamic> sendToPredictor(imagePath) async {
   return response.data;
 }
 
+
