@@ -10,7 +10,7 @@ assessments of skin related diseases along with providing a daily feed of skin c
 
 - Skin Disease Detection using Machine Learning Model 
 enabled through Android App which uses Flask API.
-- Remedy is suggested for the skin disease detected by 
+- Symptoms are suggested for the skin disease detected by 
 the app using ML model.
 - Get access to daily skincare routines and tips with short 
 tutorials that teach you skills you should know.
