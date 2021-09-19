@@ -1,4 +1,4 @@
-# skinmitra
+# Skinmitra ( Skin मित्र )
 
 ![logo](https://user-images.githubusercontent.com/65285162/133836396-be5c2526-e4c1-4991-ad51-0661ce181276.png)
 
