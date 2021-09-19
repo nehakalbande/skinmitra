@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:skinmitra/widgets/nav_draw.dart';
 
 class ResultPage extends StatefulWidget {
-  final String disease, plant, remedy;
+  final String disease, symptoms;
 
   const ResultPage(
       {Key? key,
       required this.disease,
-      required this.plant,
-      required this.remedy})
+      required this.symptoms})
       : super(key: key);
+
 
   @override
   _ResultPageState createState() => _ResultPageState();
@@ -17,6 +17,11 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
   var isLoading = false;
+
+  String disease = "Basal Cell Carcinoma";
+
+  String symptoms = "- A pearly white, skin-colored or pink bump,\n- A brown, black or blue lesion,\n- A flat, scaly, reddish patch,\n- A white, waxy, scar-like lesion";
+
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +56,40 @@ class _ResultPageState extends State<ResultPage> {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    widget.remedy,
+                    "${disease} Detected",
+                    style: TextStyle(fontSize: 30.0),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    "",
                     style: TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
+                  ),
+
+                  Text(
+                    "Symptoms",
+                    style: TextStyle(fontSize: 25.0),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    "",
+                    style: TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
+                  ),
+
+                  Text(
+                    "${symptoms}",
+                    style: TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    "",
+                    style: TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    "Please Contact Doctor",
+                    style: TextStyle(fontSize: 30.0),
                     textAlign: TextAlign.center,
                   ),
                   Text(
@@ -63,48 +100,6 @@ class _ResultPageState extends State<ResultPage> {
                 ],
               ),
             ),
-
-
-            // Container(
-            //   height: MediaQuery.of(context).size.height*0.8,
-            //   width: MediaQuery.of(context).size.width,
-            //   padding: const EdgeInsets.all(8),
-            //   decoration: BoxDecoration(
-            //       color: Colors.greenAccent.withOpacity(0.3),
-            //       borderRadius: BorderRadius.circular(16)),
-            //   child: Column(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: [
-            //
-            //       Text("Plant Name: " + widget.plant,
-            //           style: TextStyle(fontSize: 18)),
-            //
-            //       widget.disease == "healthy"
-            //           ? Text("Your Plant is Healthy!!",
-            //               style: TextStyle(fontSize: 18))
-            //           : Text("Disease detected: " + widget.disease,
-            //               style: TextStyle(fontSize: 18)),
-            //
-            //
-            //       widget.disease == "healthy"
-            //           ? Container()
-            //           : Text("Possible remedy: ",
-            //               style: TextStyle(fontSize: 18)),
-            //
-            //
-            //       widget.disease == "healthy"
-            //           ? Container()
-            //           : Text(widget.remedy,
-            //               style: TextStyle(
-            //                   fontSize: 14, fontStyle: FontStyle.italic)),
-            //       Spacer(
-            //         flex: 2,
-            //       ),
-            //     ],
-            //   ),
-            // ),
-
-
 
             isLoading
                 ? Expanded(
