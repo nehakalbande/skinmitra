@@ -2,18 +2,28 @@
 
 ![logo](https://user-images.githubusercontent.com/65285162/133836396-be5c2526-e4c1-4991-ad51-0661ce181276.png)
 
+Skin Mitra ( Skin मित्र ) where ‘mitra’ in Sanskrit translates to friend, is a
+skincare application which will help physicians, radiologists and patients in preliminary
+assessments of skin related diseases along with providing a daily feed of skin care routines.
 
-A new Flutter application.
+## Technical Advantages
 
-## Getting Started
+- Skin Disease Detection using Machine Learning Model 
+enabled through Android App which uses Flask API.
+- Remedy is suggested for the skin disease detected by 
+the app using ML model.
+- Get access to daily skincare routines and tips with short 
+tutorials that teach you skills you should know.
+- A range of essential tutorials to learn from and be prepared. 
+A new tutorial presented to you daily
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technologies used
+- Python
+- Pytorch
+- Flutter
+- Firebase
+- IBM Node-Red
+- Flask 
