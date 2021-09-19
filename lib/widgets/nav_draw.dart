@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:skinmitra/authentication/auth_class.dart';
 import 'package:skinmitra/camera/camera_page.dart';
 import 'package:skinmitra/pages/home_page.dart';
+import 'package:skinmitra/widgets/pdlload.dart';
 
 import '../main.dart';
 
@@ -10,6 +11,7 @@ import '../main.dart';
 class NavigationDrawerWidget extends StatelessWidget {
 
   final User = FirebaseAuth.instance.currentUser;
+
 
   Route _routeToSignInScreen() {
     return PageRouteBuilder(
@@ -36,6 +38,7 @@ class NavigationDrawerWidget extends StatelessWidget {
     final email = User!.email.toString();
     final photo = User!.photoURL.toString();
 
+    
     return Drawer(
       child: Material(
         color: Colors.green,
@@ -78,10 +81,10 @@ class NavigationDrawerWidget extends StatelessWidget {
             buildMenuItem(
                 text: "Help",
                 icon: Icons.help,
-                onClicked: () => {}
-              // onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-              //   builder: (context) => CameraPage(),
-              // )),
+              onClicked: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => PdfView(),
+              )),
+
             ),
 
             SizedBox(height: MediaQuery
