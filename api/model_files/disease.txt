@@ -1,0 +1,26 @@
+[
+{
+"disease":"Acne",
+"symptons":"-Whiteheads (closed plugged pores),/n -Blackheads (open plugged pores),/n -Pimples (pustules), which are papules with pus at their tips."
+},
+{
+"disease":"Rosacea",
+"symptons:"-Flushing and redness in the center of the face, /n -Visible broken blood vessels (spider veins),/n -Swollen skin, /n -Skin may be very sensitive"
+},
+{
+"disease":"Melanoma Skin Cancer",
+"symptons:"-Bigger mole diameter, /n -darkening of the skin, /n -mole color changes,/n -or skin mole with irregular border"
+},
+{
+"disease":"Nevi",
+"symptons":"-darkening of the skin or small bump"
+},
+{
+"disease":"Moles",
+"symptons:"-birthmark,/n - discolouration"
+},
+{
+"disease":"Actinic keratosis",
+"symptons:"-scaly patch on skin,/n -itching,/n -Flat to slightly raised patch or bump on the top layer of skin"
+}
+]
