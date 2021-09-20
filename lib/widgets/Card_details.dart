@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class CardDetailScreen extends StatefulWidget {
-  //Structuring the animal detail screen.
   final String id;
   final String title;
   final String image1;
@@ -31,7 +30,6 @@ class CardDetailScreen extends StatefulWidget {
 
 class _CardDetailScreenState extends State<CardDetailScreen> {
 
-  Future<void>? _launched;
   Future<void> _launchurl(String url) async {
     if (await canLaunch(url)) {
       await launch(
